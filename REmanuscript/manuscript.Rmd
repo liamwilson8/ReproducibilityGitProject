@@ -11,6 +11,7 @@ bibliography: references.bib
 ## Installing Packages
 
 ```{r}
+options(repos = c(CRAN = "https://cran.rstudio.com/"))
 install.packages("rmarkdown")
 install.packages("tinytex")
 library(rmarkdown)
@@ -19,4 +20,6 @@ library(tinytex)
 
 ## Zotero References from .bib file: References.bib
 
-## [@co2elev; @ma2010; @zhu2022]
+## [@co2elev; 
+@ma2010; 
+@zhu2022]
