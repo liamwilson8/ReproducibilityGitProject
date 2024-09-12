@@ -3,10 +3,6 @@ title: " draft manuscript"
 author: "Liam Wilson"
 date: "2024-09-11"
 output: html_document
-bibliography:
-  - ZoteroLibrary.bib
-bibliography: references.bib
-bibliography: references.bib
 bibliography: references.bib
 ---
 
@@ -21,13 +17,6 @@ library(rmarkdown)
 library(tinytex)
 ```
 
-## Zotero References from .bib file
+## Zotero References from .bib file: References.bib
 
-[@co2elev]
-
-[@ma2010]
-
-[@zhu2022]
-
-::: {#refs}
-:::
+## [@co2elev; @ma2010; @zhu2022]
