@@ -3,7 +3,7 @@ title: " draft manuscript"
 author: "Liam Wilson"
 date: "2024-09-11"
 output: html_document
-bibliography: references.bib
+bibliography: /Users/liamwilson/Desktop/GradSchool/Semesters/FourthSemF2024/ReproducibilityR/ReproducibilityProjectF2024/ReproducibilityGitProject/REmanuscript/updatedreferences.bib
 ---
 
 # Draft Manuscript for the LDP Reproducibility Class
@@ -18,8 +18,11 @@ library(rmarkdown)
 library(tinytex)
 ```
 
-## Zotero References from .bib file: References.bib
+## Zotero References from .bib file
 
-## [@co2elev; 
-@ma2010; 
-@zhu2022]
+First citation [@co2elev]
+
+Second citation [@ma2010a]
+
+Third Citation [@zhu2022a]
+
