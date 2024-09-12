@@ -13,3 +13,4 @@ write.csv(hbr_maples, "/Users/liamwilson/Desktop/GradSchool/Semesters/FourthSemF
 library(readr)
 hbr_maples <- read_csv("RErawdata/hbr_maples.csv")
 View(hbr_maples)
+
