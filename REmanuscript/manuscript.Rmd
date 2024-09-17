@@ -17,10 +17,13 @@ install.packages("tinytex")
 library(rmarkdown)
 library(tinytex)
 ```
+
 ##Download Package Pre Reg to make a Prereg File
 ```{r}
 install.packages("prereg")
 library(prereg)
+install.packages('tinytex')
+tinytex::install_tinytex()
 ```
 
 ## Zotero References from .bib file
