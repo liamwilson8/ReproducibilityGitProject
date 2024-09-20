@@ -253,29 +253,6 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-
-div.csl-bib-body { }
-div.csl-entry {
-clear: both;
-margin-bottom: 0em;
-}
-.hanging div.csl-entry {
-margin-left:2em;
-text-indent:-2em;
-}
-div.csl-left-margin {
-min-width:2em;
-float:left;
-}
-div.csl-right-inline {
-margin-left:2em;
-padding-left:1em;
-}
-div.csl-indent {
-margin-left: 2em;
-}
-</style>
 
 
 
@@ -388,40 +365,179 @@ display: none;
 install.packages(&quot;rmarkdown&quot;)</code></pre>
 <pre><code>## 
 ## The downloaded binary packages are in
-##  /var/folders/bx/m8_77dcx0430_bfxbfq5fdkr0000gn/T//Rtmpm46xJ7/downloaded_packages</code></pre>
+##  /var/folders/bx/m8_77dcx0430_bfxbfq5fdkr0000gn/T//RtmpQJFhtJ/downloaded_packages</code></pre>
 <pre class="r"><code>install.packages(&quot;tinytex&quot;)</code></pre>
 <pre><code>## 
 ## The downloaded binary packages are in
-##  /var/folders/bx/m8_77dcx0430_bfxbfq5fdkr0000gn/T//Rtmpm46xJ7/downloaded_packages</code></pre>
+##  /var/folders/bx/m8_77dcx0430_bfxbfq5fdkr0000gn/T//RtmpQJFhtJ/downloaded_packages</code></pre>
 <pre class="r"><code>library(rmarkdown)
-library(tinytex)</code></pre>
+library(tinytex)
+install.packages(&quot;tidyverse&quot;)</code></pre>
+<pre><code>## 
+## The downloaded binary packages are in
+##  /var/folders/bx/m8_77dcx0430_bfxbfq5fdkr0000gn/T//RtmpQJFhtJ/downloaded_packages</code></pre>
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+## ✔ dplyr     1.1.4     ✔ readr     2.1.5
+## ✔ forcats   1.0.0     ✔ stringr   1.5.1
+## ✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+## ✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+## ✔ purrr     1.0.2     
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()
+## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div id="download-package-pre-reg-to-make-a-prereg-file" class="section level2">
+<h2>Download Package Pre Reg to make a Prereg File</h2>
+<pre class="r"><code>install.packages(&quot;prereg&quot;)</code></pre>
+<pre><code>## 
+## The downloaded binary packages are in
+##  /var/folders/bx/m8_77dcx0430_bfxbfq5fdkr0000gn/T//RtmpQJFhtJ/downloaded_packages</code></pre>
+<pre class="r"><code>library(prereg)
+install.packages(&#39;tinytex&#39;)</code></pre>
+<pre><code>## 
+## The downloaded binary packages are in
+##  /var/folders/bx/m8_77dcx0430_bfxbfq5fdkr0000gn/T//RtmpQJFhtJ/downloaded_packages</code></pre>
+<pre class="r"><code>tinytex::install_tinytex(force=TRUE)</code></pre>
+<pre><code>## tlmgr install fancyhdr threeparttable titlesec titling tlgpg</code></pre>
+<pre><code>## tlmgr update --self</code></pre>
+<pre><code>## tlmgr install fancyhdr threeparttable titlesec titling tlgpg</code></pre>
+<pre><code>## tlmgr --repository http://www.preining.info/tlgpg/ install tlgpg</code></pre>
+<pre><code>## tlmgr option repository &#39;https://ca.mirrors.cicku.me/ctan/systems/texlive/tlnet&#39;</code></pre>
+<pre><code>## tlmgr update --list</code></pre>
+<pre class="r"><code>library(tinytex)</code></pre>
+</div>
+<div id="getting-data" class="section level2">
+<h2>Getting Data</h2>
+<pre class="r"><code>install.packages(&quot;lterdatasampler&quot;)</code></pre>
+<pre><code>## 
+## The downloaded binary packages are in
+##  /var/folders/bx/m8_77dcx0430_bfxbfq5fdkr0000gn/T//RtmpQJFhtJ/downloaded_packages</code></pre>
+<pre class="r"><code>library(lterdatasampler)</code></pre>
+</div>
+<div id="making-hbr_maples-df" class="section level2">
+<h2>Making hbr_maples df</h2>
+<pre class="r"><code>hbr_maples &lt;- hbr_maples</code></pre>
+</div>
+</div>
+<div id="hypotheses-and-analysis-using-one-way-anovas" class="section level1">
+<h1>Hypotheses and Analysis using One-Way ANOVA’s</h1>
+<div id="first-hypothesis" class="section level2">
+<h2>First Hypothesis</h2>
+<div id="h0-plant-leaf-area-will-be-the-same-for-all-elevations" class="section level3">
+<h3>H0: Plant leaf area will be the same for all elevations</h3>
+</div>
+<div id="h1-plant-leaf-area-will-be-larger-at-lower-elevations-as-a-result-of-increased-water-and-humidity-at-lower-elevations-thus-allowing-higher-growth-rates." class="section level3">
+<h3>H1: Plant leaf area will be larger at lower elevations as a result
+of increased water and humidity at lower elevations, thus allowing
+higher growth rates.</h3>
+<pre class="r"><code>leafarea &lt;- hbr_maples %&gt;%
+  select(elevation, leaf1area) %&gt;%
+  drop_na()
+
+leafareamod &lt;- aov(leaf1area ~ elevation, data =hbr_maples)
+
+summary(leafareamod)</code></pre>
+<pre><code>##              Df Sum Sq Mean Sq F value Pr(&gt;F)  
+## elevation     1     46   46.27   2.834 0.0936 .
+## Residuals   238   3885   16.33                 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 119 observations deleted due to missingness</code></pre>
+</div>
+<div id="p-value-0.05.-therefore-cannot-reject-null-hypothesis.-leaf-area-is-the-same-at-both-low-and-medium-elevations." class="section level3">
+<h3>P Value &gt;0.05. Therefore, cannot reject null hypothesis. Leaf
+area is the same at both low and medium elevations.</h3>
+</div>
+</div>
+<div id="second-hypothesis" class="section level2">
+<h2>Second Hypothesis</h2>
+<div id="h0-plant-stem-length-will-be-the-same-for-all-elevations" class="section level3">
+<h3>H0: Plant stem length will be the same for all elevations</h3>
+</div>
+<div id="h1-plant-stems-will-be-longer-at-lower-elevations-as-a-result-of-increased-water-and-humidity-at-lower-elevations-thus-allowing-higher-growth-rates." class="section level3">
+<h3>H1: Plant stems will be longer at lower elevations as a result of
+increased water and humidity at lower elevations, thus allowing higher
+growth rates.</h3>
+<pre class="r"><code>stemlength &lt;- hbr_maples %&gt;%
+  select(elevation, stem_length) %&gt;%
+  drop_na()
+
+stemlengthmod &lt;- aov(stem_length ~ elevation, data =hbr_maples)
+
+summary(stemlengthmod)</code></pre>
+<pre><code>##              Df Sum Sq Mean Sq F value Pr(&gt;F)
+## elevation     1    189   189.2   0.896  0.345
+## Residuals   238  50269   211.2               
+## 119 observations deleted due to missingness</code></pre>
+</div>
+<div id="p-value-0.05.-therefore-cannot-reject-null-hypothesis.-stem-length-is-the-same-at-both-low-and-medium-elevations." class="section level3">
+<h3>P Value &gt;0.05. Therefore, cannot reject null hypothesis. Stem
+length is the same at both low and medium elevations.</h3>
+</div>
+</div>
+<div id="third-hypothesis" class="section level2">
+<h2>Third Hypothesis</h2>
+<div id="h0-plant-dry-leaf-mass-will-be-the-same-for-all-elevations" class="section level3">
+<h3>H0: Plant dry leaf mass will be the same for all elevations</h3>
+</div>
+<div id="h1-plant-leaf-dry-mass-will-be-higher-at-lower-elevations-as-a-result-of-increased-water-and-humidity-at-lower-elevations-thus-allowing-higher-growth-rates." class="section level3">
+<h3>H1: Plant leaf dry mass will be higher at lower elevations as a
+result of increased water and humidity at lower elevations, thus
+allowing higher growth rates.</h3>
+<pre class="r"><code>dryleafmass &lt;- hbr_maples %&gt;%
+  select(elevation, leaf_dry_mass) %&gt;%
+  drop_na()
+
+dryleafmod &lt;- aov(leaf_dry_mass ~ elevation, data =hbr_maples)
+
+summary(dryleafmod)</code></pre>
+<pre><code>##              Df  Sum Sq  Mean Sq F value Pr(&gt;F)  
+## elevation     1 0.00485 0.004847   5.424 0.0207 *
+## Residuals   238 0.21270 0.000894                 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 119 observations deleted due to missingness</code></pre>
+</div>
+<div id="p-value-0.05.-therefore-we-can-reject-null-hypothesis.-leaf-dry-mass-is-different-at-low-and-medium-elevations." class="section level3">
+<h3>P Value &lt; 0.05. Therefore, we can reject null hypothesis. leaf
+dry mass is different at low and medium elevations.</h3>
+</div>
+</div>
+<div id="fourth-hypothesis" class="section level2">
+<h2>Fourth Hypothesis</h2>
+<div id="h0-plant-dry-stem-mass-will-be-the-same-for-all-elevations" class="section level3">
+<h3>H0: Plant dry stem mass will be the same for all elevations</h3>
+</div>
+<div id="h1-plant-stem-dry-mass-will-be-higher-at-lower-elevations-as-a-result-of-increased-water-and-humidity-at-lower-elevations-thus-allowing-higher-growth-rates." class="section level3">
+<h3>H1: Plant stem dry mass will be higher at lower elevations as a
+result of increased water and humidity at lower elevations, thus
+allowing higher growth rates.</h3>
+<pre class="r"><code>drystemmass &lt;- hbr_maples %&gt;%
+  select(elevation, stem_dry_mass) %&gt;%
+  drop_na()
+
+drystemmod &lt;- aov(stem_dry_mass ~ elevation, data =hbr_maples)
+
+summary(drystemmod)</code></pre>
+<pre><code>##              Df   Sum Sq   Mean Sq F value Pr(&gt;F)  
+## elevation     1 0.000582 0.0005822   5.702 0.0177 *
+## Residuals   238 0.024300 0.0001021                 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 119 observations deleted due to missingness</code></pre>
+</div>
+<div id="p-value-0.05.-therefore-we-can-reject-null-hypothesis.-stem-dry-mass-is-different-at-low-and-medium-elevations." class="section level3">
+<h3>P Value &lt; 0.05. Therefore, we can reject null hypothesis. stem
+dry mass is different at low and medium elevations.</h3>
+</div>
 </div>
 <div id="zotero-references-from-.bib-file" class="section level2">
 <h2>Zotero References from .bib file</h2>
-<p>First citation <span class="citation">(<span>“CO2 ELEVATION, CANOPY
-PHOTOSYNTHESIS, ANDOPTIMAL LEAF AREA INDEX - Hirose - 1997 - Ecology -
-Wiley Online Library,”</span> n.d.)</span></p>
-<p>Second citation <span class="citation">(Ma et al. 2010)</span></p>
-<p>Third Citation <span class="citation">(Zhu et al. 2022)</span></p>
-<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
-<div id="ref-co2elev" class="csl-entry">
-<span>“CO2 ELEVATION, CANOPY PHOTOSYNTHESIS, ANDOPTIMAL LEAF AREA INDEX
-- Hirose - 1997 - Ecology - Wiley Online Library.”</span> n.d. <a href="https://esajournals.onlinelibrary.wiley.com/doi/full/10.1890/0012-9658%281997%29078%5B2339%3ACECPAL%5D2.0.CO%3B2?casa_token=yJDoDlxENB0AAAAA%3AMXj4GkXM-2ruaxTC8VA4UiINotQvyEZIuXSMRNo_EDOWEx7TwMPU1XzeZq4WSiVE2hMY3xajsNLBsZFZ">https://esajournals.onlinelibrary.wiley.com/doi/full/10.1890/0012-9658%281997%29078%5B2339%3ACECPAL%5D2.0.CO%3B2?casa_token=yJDoDlxENB0AAAAA%3AMXj4GkXM-2ruaxTC8VA4UiINotQvyEZIuXSMRNo_EDOWEx7TwMPU1XzeZq4WSiVE2hMY3xajsNLBsZFZ</a>.
-</div>
-<div id="ref-ma2010a" class="csl-entry">
-Ma, WeiLing, PeiLi Shi, WenHua Li, YongTao He, XianZhou Zhang, ZhenXi
-Shen, and SiYue Chai. 2010. <span>“Changes in Individual Plant Traits
-and Biomass Allocation in Alpine Meadow with Elevation Variation on the
-Qinghai-Tibetan Plateau.”</span> <em>Science China Life Sciences</em> 53
-(9): 1142–51. <a href="https://doi.org/10.1007/s11427-010-4054-9">https://doi.org/10.1007/s11427-010-4054-9</a>.
-</div>
-<div id="ref-zhu2022a" class="csl-entry">
-Zhu, Liwei, Yaxing Zhang, Huiying Ye, Yanqiong Li, Weiting Hu, Jie Du,
-Ping Zhao, and Wieland Fricke. 2022. <span>“Variations in Leaf and Stem
-Traits Across Two Elevations in Subtropical Forests.”</span>
-<em>Functional Plant Biology</em> 49 (4): 319–32. <a href="https://doi.org/10.1071/FP21220">https://doi.org/10.1071/FP21220</a>.
-</div>
-</div>
+<p>First citation <span class="citation">(<strong>co2elev?</strong>)</span></p>
+<p>Second citation <span class="citation">(<strong>ma2010a?</strong>)</span></p>
+<p>Third Citation <span class="citation">(<strong>zhu2022a?</strong>)</span></p>
 </div>
 </div>
 
