@@ -1,8 +1,10 @@
 ---
-title: " draft manuscript"
+title: ' draft manuscript'
 author: "Liam Wilson"
 date: "2024-09-11"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 bibliography: /Users/liamwilson/Desktop/GradSchool/Semesters/FourthSemF2024/ReproducibilityR/ReproducibilityProjectF2024/ReproducibilityGitProject/REmanuscript/updatedreferences.bib
 ---
 
@@ -25,6 +27,81 @@ library(prereg)
 install.packages('tinytex')
 tinytex::install_tinytex()
 ```
+
+#Hypotheses and Analysis 
+##First Hypothesis
+###H0: Plant leaf area will be the same for all elevations 
+### H1: Plant leaf area will be larger at lower elevations as a result of increased water and humidity at lower elevations, thus allowing higher growth rates. 
+
+###Install/Load Packages 
+```{r}
+install.packages("tidyverse")
+library(tidyverse)
+```
+
+### Anova: Plant leaf area by elevation 
+
+```{r}
+leafarea <- hbr_maples %>%
+  select(elevation, leaf1area) %>%
+  drop_na()
+
+leafareamod <- aov(leaf1area ~ elevation, data =hbr_maples)
+
+summary(leafareamod)
+
+```
+
+###P Value >0.05. Therefore, cannot reject null hypothesis. Leaf area is the same at both low and medium elevations. 
+
+##Second Hypothesis
+###H0: Plant stem length will be the same for all elevations 
+### H1: Plant stems will be longer at lower elevations as a result of increased water and humidity at lower elevations, thus allowing higher growth rates.
+
+```{r}
+stemlength <- hbr_maples %>%
+  select(elevation, stem_length) %>%
+  drop_na()
+
+stemlengthmod <- aov(stem_length ~ elevation, data =hbr_maples)
+
+summary(stemlengthmod)
+
+```
+###P Value >0.05. Therefore, cannot reject null hypothesis. Stem length is the same at both low and medium elevations.
+
+##Third Hypothesis
+###H0: Plant dry leaf mass will be the same for all elevations 
+### H1: Plant leaf dry mass will be higher at lower elevations as a result of increased water and humidity at lower elevations, thus allowing higher growth rates.
+
+```{r}
+dryleafmass <- hbr_maples %>%
+  select(elevation, leaf_dry_mass) %>%
+  drop_na()
+
+dryleafmod <- aov(leaf_dry_mass ~ elevation, data =hbr_maples)
+
+summary(dryleafmod)
+
+```
+###P Value < 0.05. Therefore, we can reject null hypothesis. leaf dry mass is different at low and medium elevations.
+
+##Fourth Hypothesis
+###H0: Plant dry stem mass will be the same for all elevations 
+### H1: Plant stem dry mass will be higher at lower elevations as a result of increased water and humidity at lower elevations, thus allowing higher growth rates.
+
+```{r}
+drystemmass <- hbr_maples %>%
+  select(elevation, stem_dry_mass) %>%
+  drop_na()
+
+drystemmod <- aov(stem_dry_mass ~ elevation, data =hbr_maples)
+
+summary(drystemmod)
+
+```
+###P Value < 0.05. Therefore, we can reject null hypothesis. stem dry mass is different at low and medium elevations.
+
 
 ## Zotero References from .bib file
 
