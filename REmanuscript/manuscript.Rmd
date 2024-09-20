@@ -25,7 +25,8 @@ library(tinytex)
 install.packages("prereg")
 library(prereg)
 install.packages('tinytex')
-tinytex::install_tinytex()
+tinytex::install_tinytex(force=TRUE)
+library(tinytex)
 ```
 
 #Hypotheses and Analysis 
@@ -110,4 +111,5 @@ First citation [@co2elev]
 Second citation [@ma2010a]
 
 Third Citation [@zhu2022a]
+
 
