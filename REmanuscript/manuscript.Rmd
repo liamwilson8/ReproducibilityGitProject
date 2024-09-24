@@ -2,10 +2,11 @@
 title: ' draft manuscript'
 author: "Liam Wilson"
 date: "2024-09-11"
-output:
+output:/Users/liamwilson/Desktop/GradSchool/Semesters/FourthSemF2024/ReproducibilityR/ReproducibilityProjectF2024/ReproducibilityGitProject/REoutdata
   html_document: default
   pdf_document: default
 bibliography: /Users/liamwilson/Desktop/GradSchool/Semesters/FourthSemF2024/ReproducibilityR/ReproducibilityProjectF2024/ReproducibilityGitProject/REmanuscript/updatedreferences.bib
+csl: https://www.zotero.org/styles/apa
 ---
 
 # Draft Manuscript for the LDP Reproducibility Class
