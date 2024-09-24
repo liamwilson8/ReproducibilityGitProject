@@ -1,4 +1,0 @@
-# ReproducibilityGitProject
-For LDP
-
-
