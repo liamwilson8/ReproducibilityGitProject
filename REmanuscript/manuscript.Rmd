@@ -41,17 +41,22 @@ tinytex::install_tinytex(force=TRUE)
 library(tinytex)
 ```
 
-## Getting Data
+## Getting Data - Within the Rmd File
 
 ```{r}
 install.packages("lterdatasampler")
 library(lterdatasampler)
+hbr_maples <- hbr_maples
+view(hbr_maples)
 ```
 
-## Making hbr_maples df 
+##Getting Data - Pulling from RErawdata
 ```{r}
-hbr_maples <- hbr_maples
+library(readr)
+hbr_maples <- read_csv("RErawdata/hbr_maples.csv")
+View(hbr_maples)
 ```
+
 
 ##Note - Alternate way to acess datset is in datascript.R file within the REscripts folder then import dataset from files. 
 

@@ -1,1 +1,1 @@
-#outdata read me 
+All data output can be viewed in the manuscript.Rmd file housed within the REmanuscript folder. 
