@@ -53,7 +53,7 @@ view(hbr_maples)
 ##Getting Data - Pulling from RErawdata
 ```{r}
 library(readr)
-hbr_maples <- read_csv("/Users/liamwilson/Desktop/GradSchool/Semesters/FourthSemF2024/ReproducibilityR/ReproducibilityProjectF2024/ReproducibilityGitProject/RErawdata/hbr_maples.csv")
+hbr_maples <- read_csv("ReproducibilityProject2024Archive/00_RErawdata/hbr_maples.csv")
 View(hbr_maples)
 ```
 
