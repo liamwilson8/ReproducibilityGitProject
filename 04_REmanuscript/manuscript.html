@@ -13,7 +13,7 @@
 
 <meta name="date" content="2024-09-11" />
 
-<title>draft manuscript</title>
+<title>Draft Manuscript</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -350,7 +350,7 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">draft manuscript</h1>
+<h1 class="title toc-ignore">Draft Manuscript</h1>
 <h4 class="author">Liam Wilson</h4>
 <h4 class="date">2024-09-11</h4>
 
@@ -359,66 +359,114 @@ display: none;
 
 <div id="draft-manuscript-for-the-ldp-reproducibility-class" class="section level1">
 <h1>Draft Manuscript for the LDP Reproducibility Class</h1>
+<div id="initializating-package-managment" class="section level2">
+<h2>Initializating Package Managment</h2>
+<pre class="r"><code>install.packages(&quot;renv&quot;)</code></pre>
+<pre><code>## The following package(s) will be installed:
+## - renv [1.0.9]
+## These packages will be installed into &quot;~/Desktop/GradSchool/Semesters/FourthSemF2024/ReproducibilityR/ReproducibilityProjectF2024/ReproducibilityGitProject/04_REmanuscript/renv/library/macos/R-4.4/aarch64-apple-darwin20&quot;.
+## 
+## # Installing packages --------------------------------------------------------
+## - Installing renv ...                           OK [linked from cache]
+## Successfully installed 1 package in 8 milliseconds.</code></pre>
+<pre class="r"><code>library(renv)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;renv&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     embed, update</code></pre>
+<pre><code>## The following objects are masked from &#39;package:utils&#39;:
+## 
+##     history, upgrade</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     autoload, load, remove, use</code></pre>
+<pre class="r"><code>renv::init()
+renv::snapshot()</code></pre>
+<pre><code>## - The lockfile is already up to date.</code></pre>
+</div>
 <div id="installing-packages" class="section level2">
 <h2>Installing Packages</h2>
 <pre class="r"><code>options(repos = c(CRAN = &quot;https://cran.rstudio.com/&quot;))
 install.packages(&quot;rmarkdown&quot;)</code></pre>
-<pre><code>## 
-## The downloaded binary packages are in
-##  /var/folders/bx/m8_77dcx0430_bfxbfq5fdkr0000gn/T//RtmpQJFhtJ/downloaded_packages</code></pre>
+<pre><code>## The following package(s) will be installed:
+## - rmarkdown [2.28]
+## These packages will be installed into &quot;~/Desktop/GradSchool/Semesters/FourthSemF2024/ReproducibilityR/ReproducibilityProjectF2024/ReproducibilityGitProject/04_REmanuscript/renv/library/macos/R-4.4/aarch64-apple-darwin20&quot;.
+## 
+## # Installing packages --------------------------------------------------------
+## - Installing rmarkdown ...                      OK [linked from cache]
+## Successfully installed 1 package in 9.9 milliseconds.</code></pre>
 <pre class="r"><code>install.packages(&quot;tinytex&quot;)</code></pre>
+<pre><code>## The following package(s) will be installed:
+## - tinytex [0.53]
+## These packages will be installed into &quot;~/Desktop/GradSchool/Semesters/FourthSemF2024/ReproducibilityR/ReproducibilityProjectF2024/ReproducibilityGitProject/04_REmanuscript/renv/library/macos/R-4.4/aarch64-apple-darwin20&quot;.
+## 
+## # Installing packages --------------------------------------------------------
+## - Installing tinytex ...                        OK [linked from cache]
+## Successfully installed 1 package in 4.1 milliseconds.</code></pre>
+<pre class="r"><code>tinytex::install_tinytex(force=TRUE) #If install.packages(&quot;tinytex&quot;) does not work)</code></pre>
+<pre><code>## tlmgr install fancyhdr threeparttable titlesec titling</code></pre>
+<pre><code>## tlmgr --repository http://www.preining.info/tlgpg/ install tlgpg</code></pre>
+<pre><code>## tlmgr option repository &#39;https://muug.ca/mirror/ctan/systems/texlive/tlnet&#39;</code></pre>
+<pre><code>## tlmgr update --list</code></pre>
+<pre class="r"><code>install.packages(&quot;tidyverse&quot;)</code></pre>
+<pre><code>## The following package(s) will be installed:
+## - tidyverse [2.0.0]
+## These packages will be installed into &quot;~/Desktop/GradSchool/Semesters/FourthSemF2024/ReproducibilityR/ReproducibilityProjectF2024/ReproducibilityGitProject/04_REmanuscript/renv/library/macos/R-4.4/aarch64-apple-darwin20&quot;.
+## 
+## # Installing packages --------------------------------------------------------
+## - Installing tidyverse ...                      OK [linked from cache]
+## Successfully installed 1 package in 4.2 milliseconds.</code></pre>
+<pre class="r"><code>install.packages(&quot;lterdatasampler&quot;)</code></pre>
+<pre><code>## The following package(s) will be installed:
+## - lterdatasampler [0.1.1]
+## These packages will be installed into &quot;~/Desktop/GradSchool/Semesters/FourthSemF2024/ReproducibilityR/ReproducibilityProjectF2024/ReproducibilityGitProject/04_REmanuscript/renv/library/macos/R-4.4/aarch64-apple-darwin20&quot;.
+## 
+## # Installing packages --------------------------------------------------------
+## - Installing lterdatasampler ...                OK [linked from cache]
+## Successfully installed 1 package in 4.3 milliseconds.</code></pre>
+<pre class="r"><code>library(rmarkdown)</code></pre>
 <pre><code>## 
-## The downloaded binary packages are in
-##  /var/folders/bx/m8_77dcx0430_bfxbfq5fdkr0000gn/T//RtmpQJFhtJ/downloaded_packages</code></pre>
-<pre class="r"><code>library(rmarkdown)
-library(tinytex)
-install.packages(&quot;tidyverse&quot;)</code></pre>
-<pre><code>## 
-## The downloaded binary packages are in
-##  /var/folders/bx/m8_77dcx0430_bfxbfq5fdkr0000gn/T//RtmpQJFhtJ/downloaded_packages</code></pre>
-<pre class="r"><code>library(tidyverse)</code></pre>
+## Attaching package: &#39;rmarkdown&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:renv&#39;:
+## 
+##     run</code></pre>
+<pre class="r"><code>library(tinytex)
+library(tidyverse)</code></pre>
 <pre><code>## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ## ✔ dplyr     1.1.4     ✔ readr     2.1.5
 ## ✔ forcats   1.0.0     ✔ stringr   1.5.1
 ## ✔ ggplot2   3.5.1     ✔ tibble    3.2.1
 ## ✔ lubridate 1.9.3     ✔ tidyr     1.3.1
-## ✔ purrr     1.0.2     
-## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✔ purrr     1.0.2</code></pre>
+<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()
+## ✖ purrr::modify() masks renv::modify()
 ## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+<pre class="r"><code>library(lterdatasampler)
+
+renv::snapshot() #Updating loaded packages in renv</code></pre>
+<pre><code>## - Lockfile written to &quot;~/Desktop/GradSchool/Semesters/FourthSemF2024/ReproducibilityR/ReproducibilityProjectF2024/ReproducibilityGitProject/04_REmanuscript/renv.lock&quot;.</code></pre>
 </div>
-<div id="download-package-pre-reg-to-make-a-prereg-file" class="section level2">
-<h2>Download Package Pre Reg to make a Prereg File</h2>
-<pre class="r"><code>install.packages(&quot;prereg&quot;)</code></pre>
-<pre><code>## 
-## The downloaded binary packages are in
-##  /var/folders/bx/m8_77dcx0430_bfxbfq5fdkr0000gn/T//RtmpQJFhtJ/downloaded_packages</code></pre>
-<pre class="r"><code>library(prereg)
-install.packages(&#39;tinytex&#39;)</code></pre>
-<pre><code>## 
-## The downloaded binary packages are in
-##  /var/folders/bx/m8_77dcx0430_bfxbfq5fdkr0000gn/T//RtmpQJFhtJ/downloaded_packages</code></pre>
-<pre class="r"><code>tinytex::install_tinytex(force=TRUE)</code></pre>
-<pre><code>## tlmgr install fancyhdr threeparttable titlesec titling tlgpg</code></pre>
-<pre><code>## tlmgr update --self</code></pre>
-<pre><code>## tlmgr install fancyhdr threeparttable titlesec titling tlgpg</code></pre>
-<pre><code>## tlmgr --repository http://www.preining.info/tlgpg/ install tlgpg</code></pre>
-<pre><code>## tlmgr option repository &#39;https://ca.mirrors.cicku.me/ctan/systems/texlive/tlnet&#39;</code></pre>
-<pre><code>## tlmgr update --list</code></pre>
-<pre class="r"><code>library(tinytex)</code></pre>
+<div id="getting-data---within-the-rmd-file" class="section level2">
+<h2>Getting Data - Within the Rmd File</h2>
+<pre class="r"><code>hbr_maples &lt;- hbr_maples
+view(hbr_maples)</code></pre>
 </div>
-<div id="getting-data" class="section level2">
-<h2>Getting Data</h2>
-<pre class="r"><code>install.packages(&quot;lterdatasampler&quot;)</code></pre>
-<pre><code>## 
-## The downloaded binary packages are in
-##  /var/folders/bx/m8_77dcx0430_bfxbfq5fdkr0000gn/T//RtmpQJFhtJ/downloaded_packages</code></pre>
-<pre class="r"><code>library(lterdatasampler)</code></pre>
-</div>
-<div id="making-hbr_maples-df" class="section level2">
-<h2>Making hbr_maples df</h2>
-<pre class="r"><code>hbr_maples &lt;- hbr_maples</code></pre>
+<div id="getting-data---pulling-from-00_rerawdata" class="section level2">
+<h2>Getting Data - Pulling from 00_RErawdata</h2>
+<pre class="r"><code>library(readr)
+hbr_maples &lt;- read_csv(&quot;../00_RErawdata/hbr_maples.csv&quot;)</code></pre>
+<pre><code>## Rows: 359 Columns: 11
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (3): watershed, elevation, transect
+## dbl (8): year, sample, stem_length, leaf1area, leaf2area, leaf_dry_mass, ste...
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>View(hbr_maples)</code></pre>
 </div>
 </div>
 <div id="hypotheses-and-analysis-using-one-way-anovas" class="section level1">

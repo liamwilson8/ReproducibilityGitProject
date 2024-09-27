@@ -1,21 +1,22 @@
 ---
-title: ' draft manuscript'
+title: "Draft Manuscript"
 author: "Liam Wilson"
 date: "2024-09-11"
-output:/Users/liamwilson/Desktop/GradSchool/Semesters/FourthSemF2024/ReproducibilityR/ReproducibilityProjectF2024/ReproducibilityGitProject/REoutdata
+output: 
   html_document: default
   pdf_document: default
-bibliography: /Users/liamwilson/Desktop/GradSchool/Semesters/FourthSemF2024/ReproducibilityR/ReproducibilityProjectF2024/ReproducibilityGitProject/REmanuscript/updatedreferences.bib
+bibliography: updatedreferences.bib
 csl: https://www.zotero.org/styles/apa
 ---
 
 # Draft Manuscript for the LDP Reproducibility Class
 
-##Initializating Package Managment 
+## Initializating Package Managment 
 ```{r}
 install.packages("renv")
 library(renv)
 renv::init()
+renv::snapshot()
 ```
 
 ## Installing Packages
@@ -31,6 +32,8 @@ library(rmarkdown)
 library(tinytex)
 library(tidyverse)
 library(lterdatasampler)
+
+renv::snapshot() #Updating loaded packages in renv
 ```
 
 ## Getting Data - Within the Rmd File
@@ -40,10 +43,10 @@ hbr_maples <- hbr_maples
 view(hbr_maples)
 ```
 
-##Getting Data - Pulling from 00_RErawdata
+## Getting Data - Pulling from 00_RErawdata
 ```{r}
 library(readr)
-hbr_maples <- read_csv("ReproducibilityProject2024Archive/00_RErawdata/hbr_maples.csv")
+hbr_maples <- read_csv("../00_RErawdata/hbr_maples.csv")
 View(hbr_maples)
 ```
 
@@ -133,5 +136,9 @@ First citation [@co2elev]
 Second citation [@ma2010a]
 
 Third Citation [@zhu2022a]
+
+
+
+
 
 
