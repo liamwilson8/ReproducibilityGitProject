@@ -16,8 +16,6 @@ csl: https://www.zotero.org/styles/apa
 install.packages("renv")
 library(renv)
 renv::init()
-
-#For updating any loaded packages use renv::update
 ```
 
 ## Installing Packages
@@ -26,39 +24,28 @@ renv::init()
 options(repos = c(CRAN = "https://cran.rstudio.com/"))
 install.packages("rmarkdown")
 install.packages("tinytex")
+tinytex::install_tinytex(force=TRUE) #If install.packages("tinytex") does not work)
+install.packages("tidyverse")
+install.packages("lterdatasampler")
 library(rmarkdown)
 library(tinytex)
-install.packages("tidyverse")
 library(tidyverse)
-```
-
-## Download Package Pre Reg to make a Prereg File
-```{r}
-install.packages("prereg")
-library(prereg)
-install.packages('tinytex')
-tinytex::install_tinytex(force=TRUE)
-library(tinytex)
+library(lterdatasampler)
 ```
 
 ## Getting Data - Within the Rmd File
 
 ```{r}
-install.packages("lterdatasampler")
-library(lterdatasampler)
 hbr_maples <- hbr_maples
 view(hbr_maples)
 ```
 
-##Getting Data - Pulling from RErawdata
+##Getting Data - Pulling from 00_RErawdata
 ```{r}
 library(readr)
 hbr_maples <- read_csv("ReproducibilityProject2024Archive/00_RErawdata/hbr_maples.csv")
 View(hbr_maples)
 ```
-
-
-##Note - Alternate way to acess datset is in datascript.R file within the REscripts folder then import dataset from files. 
 
 # Hypotheses and Analysis using One-Way ANOVA's
 
